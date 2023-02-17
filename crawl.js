@@ -1,4 +1,42 @@
-// normalize URLs
+// import
+const { JSDOM } = require('jsdom')
+
+// get URLs from HTML
+function getURLsFromHTML(htmlBody, baseURL){
+    const urls = []
+    const dom = new JSDOM(htmlBody)
+    const linkElements = dom.window.document.querySelectorAll('a')
+
+    for (const linkElement of linkElements){
+        
+        if (linkElement.href.slice(0, 1) === '/') { 
+            // relative URL
+            try {
+                const url = new URL(`${baseURL}${linkElement}`)
+                urls.push(normalizeURL(url.href))
+            }
+            catch (err) {
+                console.log(`error with relative url: ${error.message}`) 
+            }
+        }
+        else {
+            // absolute URL
+            try {
+                const url = new URL(`${linkElement}`)
+                urls.push(normalizeURL(linkElement.href))
+            }
+            catch (err) {
+                console.log(`error with absolute url: ${err.message}`) 
+            }
+             
+        }
+    } 
+
+    return urls
+}
+
+
+// normalize URL
 function normalizeURL(urlString) {
     const urlObj = new URL(urlString)
 
@@ -10,6 +48,8 @@ function normalizeURL(urlString) {
     return norm_url
 } 
 
+// export
 module.exports = {
-    normalizeURL
+    normalizeURL,
+    getURLsFromHTML
 }

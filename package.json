@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/varaticalexandru/http-web-crawler#readme",
   "dependencies": {
+    "jsdom": "^21.1.0"
+  },
+  "devDependencies": {
     "jest": "^29.4.3"
   }
 }
