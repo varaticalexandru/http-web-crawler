@@ -10,3 +10,5 @@
 - web marketers, SO search engine optimization experts
 
 - prints a hits:pages report
+
+- export to CSV option
