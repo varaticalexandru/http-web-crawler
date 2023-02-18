@@ -8,3 +8,5 @@
 (which pages link to other pages on the website)
 
 - web marketers, SO search engine optimization experts
+
+- prints a hits:pages report
