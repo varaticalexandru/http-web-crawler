@@ -1,6 +1,6 @@
 // imports
 const { crawlPage } = require('./crawl.js')
-const { printReport  } = require('./report.js')
+const { printReport, exportFn, exportCSV, saveFile, sortPages } = require('./report.js')
 
 // main function
 async function main() {
@@ -27,6 +27,9 @@ async function main() {
 
     // log the report
     printReport(pages)
+
+    // export to CSV
+    exportFn(pages)
 }
 
 
