@@ -42,7 +42,7 @@ test('getURLsFromHTML absolute', () =>{
     `
     const inputBaseURL = "https://blog.boot.dev"
     const actual = getURLsFromHTML(inputHTMLBody, inputBaseURL)
-    const expected = ["blog.boot.dev"]
+    const expected = ["https://blog.boot.dev"]
     expect(actual).toEqual(expected)
 })
 
@@ -58,7 +58,7 @@ test('getURLsFromHTML relative', () =>{
     `
     const inputBaseURL = "https://blog.boot.dev"
     const actual = getURLsFromHTML(inputHTMLBody, inputBaseURL)
-    const expected = ["blog.boot.dev/path"]
+    const expected = ["https://blog.boot.dev/path"]
     expect(actual).toEqual(expected)
 })
 
@@ -79,7 +79,7 @@ test('getURLsFromHTML absolute relative', () =>{
     `
     const inputBaseURL = "https://blog.boot.dev"
     const actual = getURLsFromHTML(inputHTMLBody, inputBaseURL)
-    const expected = ["blog.boot.dev/path", "blog.boot.dev"]
+    const expected = ["https://blog.boot.dev/path", "https://blog.boot.dev"]
     expect(actual).toEqual(expected)
 })
 

@@ -1,14 +1,5 @@
+const object = { a: 1, b: 2, c: 3 };
 
-
-
-// crawl page
-async function crawlPage(currentURL){
-
-    console.log(`actively crawling: ${currentURL}`)
-
-    const resp = await fetch(currentURL)
-    console.log(resp.text)
+for (const i of Object.entries(object)) {
+    console.log(i)
 }
-
-
-crawlPage("https://google.com")
