@@ -1,5 +1,6 @@
 // imports
 const { crawlPage } = require('./crawl.js')
+const { printReport  } = require('./report.js')
 
 // main function
 async function main() {
@@ -24,10 +25,8 @@ async function main() {
     console.log(`\ncrawl stopped ${baseURL}...`)
     console.log('printing results ...\n')
 
-    // log the pages entries
-    for (const page of Object.entries(pages)) {
-        console.log(page)
-    }
+    // log the report
+    printReport(pages)
 }
 
 
